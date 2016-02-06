@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "eslint": "./node_modules/eslint/bin/eslint.js .",
     "start": "./node_modules/babel-cli/bin/babel-node.js ./bin/www"
   },
   "dependencies": {
