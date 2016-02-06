@@ -9,6 +9,7 @@
 import app from '../app';
 import debug from 'debug';
 import http from 'http';
+import socketIo from 'socket.io';
 
 const debugLog = debug('now-server:server');
 
@@ -24,6 +25,17 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+
+/**
+ * Socket.IO
+ */
+
+const io = socketIo(server);
+
+// TODO: Socket.IO connection handling
+io.on('connection', () => {
+  console.log('Socket.IO connection')
+});
 
 /**
  * Listen on provided port, on all network interfaces.
