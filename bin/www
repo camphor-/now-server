@@ -10,6 +10,7 @@ import app from '../app';
 import debug from 'debug';
 import http from 'http';
 import socket from '../lib/socket';
+import cameraSocket from '../lib/camera';
 
 const debugLog = debug('now-server:server');
 
@@ -30,7 +31,8 @@ const server = http.createServer(app);
  * Socket.IO
  */
 
-socket.connect(server);
+const mainSocket = socket.connect(server);
+cameraSocket.connect(mainSocket);
 
 /**
  * Listen on provided port, on all network interfaces.
