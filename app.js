@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads/camera', express.static(path.join(__dirname, 'uploads/camera')));
 
 app.use('/', routes);
 app.use('/camera', camera);

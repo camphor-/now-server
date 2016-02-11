@@ -10,10 +10,6 @@ const router = Router();
 
 const UPLOAD_DIR = 'uploads/camera/';
 
-router.get('/', (req, res, next) => {
-  res.json({});
-});
-
 const generateFileName = () => {
   const random = crypto.randomBytes(256).toString('hex');
   const md5 = crypto.createHash('md5');
@@ -39,7 +35,6 @@ const savePictures = (data) => Promise.all(data.map(savePicture));
 router.get('/take', (req, res, next) => {
   camera.takePicture().then(savePictures).then(
     (data) => {
-      console.log(data);
       res.json({
         success: true,
         files: data
