@@ -9,6 +9,7 @@ import camera from '../lib/camera';
 const router = Router();
 
 const UPLOAD_DIR = 'uploads/camera/';
+const UPLOAD_URL = '/camera/uploads/';
 
 const generateFileName = () => {
   const random = crypto.randomBytes(256).toString('hex');
@@ -16,16 +17,16 @@ const generateFileName = () => {
   md5.update(random);
   const hash = md5.digest('hex');
   const time = moment().format('YYYYMMDD-HHmmss-SSS');
-  return `${UPLOAD_DIR}${time}-${hash}.jpg`;
+  return `${time}-${hash}.jpg`;
 };
 
 const savePicture = (buf) => new Promise((resolve, reject) => {
   const fileName = generateFileName();
-  writeFile(fileName, buf, (err) => {
+  writeFile(`${UPLOAD_DIR}${fileName}`, buf, (err) => {
     if (err) {
       reject(err.toString());
     } else {
-      resolve(fileName);
+      resolve(`${UPLOAD_URL}${fileName}`);
     }
   });
 });
