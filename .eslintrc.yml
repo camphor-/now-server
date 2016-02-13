@@ -13,8 +13,8 @@ rules:
     - always
   no-unused-vars:
     - 1
-ecmaFeatures:
-  modules: true
+parserOptions:
+  sourceType: module
 env:
   es6: true
   node: true
