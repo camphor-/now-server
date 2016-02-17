@@ -7,6 +7,13 @@
 ## Environment
 Latest stable version of Node.js
 
+## Run
+### Debug
+`DEBUG=now-server* npm start`
+
+### Production
+`NODE_ENV=production npm start`
+
 ## Endpoints
 - `/camera/take/` - 写真を撮影して, JSON 形式でレスポンスを返す (要認証)
 - `/camera/uploads/` - 撮影した写真を提供する
