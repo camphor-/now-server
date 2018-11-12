@@ -1,3 +1,13 @@
 {
-  "presets": ["es2015-node5"]
+  "ignore": [],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
 }

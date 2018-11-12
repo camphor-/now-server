@@ -12,7 +12,7 @@ import http from 'http';
 import socket from '../lib/socket';
 import cameraSocket from '../lib/camera';
 
-const debug = debugLogger('now-server:www');
+const debug = debugLogger('now-server:www.js');
 
 /**
  * Get port from environment and store in Express.
