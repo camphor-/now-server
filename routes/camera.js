@@ -33,7 +33,7 @@ const savePicture = (buf) => new Promise((resolve, reject) => {
 
 const savePictures = (data) => Promise.all(data.map(savePicture));
 
-router.get('/take', (req, res, next) => {
+router.get('/take', (req, res) => {
   camera.takePicture().then(savePictures).then(
     (data) => {
       res.json({
