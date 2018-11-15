@@ -12,7 +12,7 @@ import http from 'http';
 import socket from '../lib/socket';
 import cameraSocket from '../lib/camera';
 
-const debug = debugLogger('now-server:www');
+const debug = debugLogger('now-server:www.js');
 
 /**
  * Get port from environment and store in Express.
@@ -77,16 +77,18 @@ function onError(error) {
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
+  case 'EACCES':
+    // eslint-disable-next-line no-console
+    console.error(bind + ' requires elevated privileges');
+    process.exit(1);
+    break;
+  case 'EADDRINUSE':
+    // eslint-disable-next-line no-console
+    console.error(bind + ' is already in use');
+    process.exit(1);
+    break;
+  default:
+    throw error;
   }
 }
 

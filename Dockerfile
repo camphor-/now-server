@@ -1,10 +1,9 @@
-FROM node:5.6.0-slim
-MAINTAINER CAMPHOR-
+FROM node:10.13.0-slim
 
 COPY . /app/
 WORKDIR /app
 
-RUN npm install --production
+RUN yarn install --production
 
 ENV NODE_ENV production
 
