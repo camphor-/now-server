@@ -9,7 +9,7 @@
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-env": "^7.9.0",
     "body-parser": "~1.15.0",
     "cookie-parser": "~1.4.1",
     "debug": "~2.6.9",
